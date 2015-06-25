@@ -1,0 +1,56 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "user",
+            "relationshipNameCapitalized": "User",
+            "relationshipFieldName": "user",
+            "otherEntityName": "user",
+            "relationshipType": "many-to-one",
+            "otherEntityNameCapitalized": "User",
+            "otherEntityField": "login"
+        },
+        {
+            "relationshipId": 2,
+            "relationshipName": "estimation",
+            "relationshipNameCapitalized": "Estimation",
+            "relationshipFieldName": "estimation",
+            "otherEntityName": "estimation",
+            "relationshipType": "many-to-one",
+            "otherEntityNameCapitalized": "Estimation",
+            "otherEntityField": "name"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "amount",
+            "fieldType": "BigDecimal",
+            "fieldNameCapitalized": "Amount",
+            "fieldNameUnderscored": "amount",
+            "fieldInJavaBeanMethod": "Amount",
+            "fieldValidate": false
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "comment",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Comment",
+            "fieldNameUnderscored": "comment",
+            "fieldInJavaBeanMethod": "Comment",
+            "fieldValidate": false
+        }
+    ],
+    "fieldsContainOwnerManyToMany": false,
+    "fieldsContainOwnerOneToOne": false,
+    "fieldsContainOneToMany": false,
+    "fieldsContainLocalDate": false,
+    "fieldsContainCustomTime": false,
+    "fieldsContainBigDecimal": true,
+    "fieldsContainDateTime": false,
+    "fieldsContainDate": false,
+    "changelogDate": "20150625141831",
+    "dto": "no",
+    "pagination": "no",
+    "validation": false
+}

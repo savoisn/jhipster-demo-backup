@@ -1,0 +1,135 @@
+<div>
+
+    <h2 translate="startmeupApp.pledge.home.title">Pledges</h2>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <button class="btn btn-primary" data-toggle="modal" data-target="#savePledgeModal" ng-click="clear()">
+                    <span class="glyphicon glyphicon-flash"></span> <span translate="startmeupApp.pledge.home.createLabel">Create a new Pledge</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="savePledgeModal" tabindex="-1" role="dialog" aria-labelledby="myPledgeLabel"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form name="editForm" role="form" novalidate ng-submit="save()">
+
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                                ng-click="clear()">&times;</button>
+                        <h4 class="modal-title" id="myPledgeLabel" translate="startmeupApp.pledge.home.createOrEditLabel">Create or edit a Pledge</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>ID</label>
+                            <input type="text" class="form-control" name="id"
+                                   ng-model="pledge.id" readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label translate="startmeupApp.pledge.amount">Amount</label>
+                            <input type="number" class="form-control" name="amount"
+                                   ng-model="pledge.amount">
+
+                        </div>
+                        <div class="form-group">
+                            <label translate="startmeupApp.pledge.comment">Comment</label>
+                            <input type="text" class="form-control" name="comment"
+                                   ng-model="pledge.comment">
+
+                        </div>
+
+                        <div class="form-group">
+                            <label translate="startmeupApp.pledge.user">user</label>
+                            <select class="form-control" name="user" ng-model="pledge.user.id" ng-options="user.id as user.login for user in users">
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label translate="startmeupApp.pledge.estimation">estimation</label>
+                            <select class="form-control" name="estimation" ng-model="pledge.estimation.id" ng-options="estimation.id as estimation.name for estimation in estimations">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+                            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+                        </button>
+                        <button type="submit" ng-disabled="editForm.$invalid" class="btn btn-primary">
+                            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="deletePledgeConfirmation">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form name="deleteForm" ng-submit="confirmDelete(pledge.id)">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                                ng-click="clear()">&times;</button>
+                        <h4 class="modal-title" translate="entity.delete.title">Confirm delete operation</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p translate="startmeupApp.pledge.delete.question" translate-values="{id: '{{pledge.id}}'}">Are you sure you want to delete this Pledge?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+                            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+                        </button>
+                        <button type="submit" ng-disabled="deleteForm.$invalid" class="btn btn-danger">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th translate="startmeupApp.pledge.amount">Amount</th>
+                    <th translate="startmeupApp.pledge.comment">Comment</th>
+                    <th translate="startmeupApp.pledge.user">user</th>
+                    <th translate="startmeupApp.pledge.estimation">estimation</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="pledge in pledges">
+                    <td><a ui-sref="pledgeDetail({id:pledge.id})">{{pledge.id}}</a></td>
+                    <td>{{pledge.amount}}</td>
+                    <td>{{pledge.comment}}</td>
+                    <td>{{pledge.user.login}}</td>
+                    <td>{{pledge.estimation.name}}</td>
+                    <td>
+                        <button type="submit"
+                                ui-sref="pledgeDetail({id:pledge.id})"
+                                class="btn btn-info btn-sm">
+                            <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span translate="entity.action.view"> View</span>
+                        </button>
+                        <button type="submit"
+                                ng-click="showUpdate(pledge.id)"
+                                class="btn btn-primary btn-sm">
+                            <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
+                        </button>
+                        <button type="submit"
+                                ng-click="delete(pledge.id)"
+                                class="btn btn-danger btn-sm">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

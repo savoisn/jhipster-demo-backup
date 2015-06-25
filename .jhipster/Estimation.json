@@ -1,0 +1,95 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "user",
+            "relationshipNameCapitalized": "User",
+            "relationshipFieldName": "user",
+            "otherEntityName": "user",
+            "relationshipType": "many-to-one",
+            "otherEntityNameCapitalized": "User",
+            "otherEntityField": "login"
+        },
+        {
+            "relationshipId": 2,
+            "relationshipName": "project",
+            "relationshipNameCapitalized": "Project",
+            "relationshipFieldName": "project",
+            "otherEntityName": "project",
+            "relationshipType": "many-to-one",
+            "otherEntityNameCapitalized": "Project",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipId": 3,
+            "relationshipName": "pledge",
+            "relationshipNameCapitalized": "Pledge",
+            "relationshipFieldName": "pledge",
+            "otherEntityName": "pledge",
+            "relationshipType": "one-to-many",
+            "otherEntityNameCapitalized": "Pledge",
+            "otherEntityRelationshipName": "estimation"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Name",
+            "fieldNameUnderscored": "name",
+            "fieldInJavaBeanMethod": "Name",
+            "fieldValidate": true,
+            "fieldValidateRules": []
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "description",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Description",
+            "fieldNameUnderscored": "description",
+            "fieldInJavaBeanMethod": "Description",
+            "fieldValidate": true,
+            "fieldValidateRules": []
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "creadate",
+            "fieldType": "LocalDate",
+            "fieldNameCapitalized": "Creadate",
+            "fieldNameUnderscored": "creadate",
+            "fieldInJavaBeanMethod": "Creadate",
+            "fieldValidate": false
+        },
+        {
+            "fieldId": 4,
+            "fieldName": "pledged",
+            "fieldType": "Boolean",
+            "fieldNameCapitalized": "Pledged",
+            "fieldNameUnderscored": "pledged",
+            "fieldInJavaBeanMethod": "Pledged",
+            "fieldValidate": false
+        },
+        {
+            "fieldId": 5,
+            "fieldName": "cost",
+            "fieldType": "BigDecimal",
+            "fieldNameCapitalized": "Cost",
+            "fieldNameUnderscored": "cost",
+            "fieldInJavaBeanMethod": "Cost",
+            "fieldValidate": false
+        }
+    ],
+    "fieldsContainOwnerManyToMany": false,
+    "fieldsContainOwnerOneToOne": false,
+    "fieldsContainOneToMany": true,
+    "fieldsContainLocalDate": true,
+    "fieldsContainCustomTime": true,
+    "fieldsContainBigDecimal": true,
+    "fieldsContainDateTime": false,
+    "fieldsContainDate": false,
+    "changelogDate": "20150625141624",
+    "dto": "no",
+    "pagination": "no",
+    "validation": true
+}

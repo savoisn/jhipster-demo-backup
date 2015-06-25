@@ -1,0 +1,54 @@
+
+<div>
+    <h2><span translate="startmeupApp.pledge.detail.title">Pledge</span> {{pledge.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th translate="entity.detail.field">Field</th>
+                    <th translate="entity.detail.value">Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <span translate="startmeupApp.pledge.amount">Amount</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{pledge.amount}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="startmeupApp.pledge.comment">Comment</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{pledge.comment}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="startmeupApp.pledge.user">user</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{pledge.user.login}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="startmeupApp.pledge.estimation">estimation</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{pledge.estimation.name}}" readonly>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            ui-sref="pledge"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

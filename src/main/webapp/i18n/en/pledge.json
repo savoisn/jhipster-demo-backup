@@ -1,0 +1,21 @@
+{
+    "startmeupApp": {
+        "pledge" : {
+            "home": {
+                "title": "Pledges",
+                "createLabel": "Create a new Pledge",
+                "createOrEditLabel": "Create or edit a Pledge"
+            },
+            "delete": {
+                "question": "Are you sure you want to delete Pledge {{ id }}?"
+            },
+            "detail": {
+                "title": "Pledge"
+            },
+            "amount": "Amount",
+            "comment": "Comment",
+            "user": "user",
+            "estimation": "estimation"
+        }
+    }
+}

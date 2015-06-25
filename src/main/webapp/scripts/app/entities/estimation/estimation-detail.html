@@ -1,0 +1,78 @@
+
+<div>
+    <h2><span translate="startmeupApp.estimation.detail.title">Estimation</span> {{estimation.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th translate="entity.detail.field">Field</th>
+                    <th translate="entity.detail.value">Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <span translate="startmeupApp.estimation.name">Name</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{estimation.name}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="startmeupApp.estimation.description">Description</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{estimation.description}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="startmeupApp.estimation.creadate">Creadate</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{estimation.creadate}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="startmeupApp.estimation.pledged">Pledged</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{estimation.pledged}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="startmeupApp.estimation.cost">Cost</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{estimation.cost}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="startmeupApp.estimation.user">user</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{estimation.user.login}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="startmeupApp.estimation.project">project</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{estimation.project.name}}" readonly>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            ui-sref="estimation"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>
