@@ -4,6 +4,7 @@ import com.sg.startmeup.Application;
 import com.sg.startmeup.domain.Pledge;
 import com.sg.startmeup.repository.PledgeRepository;
 
+import com.sg.startmeup.service.PledgedService;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -47,6 +48,9 @@ public class PledgeResourceTest {
 
     @Inject
     private PledgeRepository pledgeRepository;
+
+    @Inject
+    private PledgedService pledgedService;
 
     private MockMvc restPledgeMockMvc;
 

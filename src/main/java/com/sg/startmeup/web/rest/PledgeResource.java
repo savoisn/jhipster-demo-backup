@@ -45,7 +45,9 @@ public class PledgeResource {
             return ResponseEntity.badRequest().header("Failure", "A new pledge cannot already have an ID").build();
         }
         pledgeRepository.save(pledge);
-        pledgedService.verify(pledge);
+        if(pledgedService!=null) {
+            pledgedService.verify(pledge);
+        }
         return ResponseEntity.created(new URI("/api/pledges/" + pledge.getId())).build();
     }
 

@@ -21,17 +21,19 @@ public class PledgedService {
     private EstimationRepository estimationRepository;
 
     public void verify(Pledge pledge) {
-        Estimation estimation = estimationRepository.getOne(pledge.getEstimation().getId());
+        if(pledge != null) {
+            Estimation estimation = estimationRepository.getOne(pledge.getEstimation().getId());
 
-        if (estimation!=null) {
-            log.debug(estimation.toString());
-            log.debug(estimation.getPledges().size() + "");
-            BigDecimal totalPledged = new BigDecimal(0);
-            for (Pledge p : estimation.getPledges()) {
-                totalPledged.add(p.getAmount());
-            }
-            if (totalPledged.compareTo(estimation.getCost())>=0 ){
-                estimation.setPledged(true);
+            if (estimation != null) {
+                log.debug(estimation.toString());
+                log.debug(estimation.getPledges().size() + "");
+                BigDecimal totalPledged = new BigDecimal(0);
+                for (Pledge p : estimation.getPledges()) {
+                    totalPledged.add(p.getAmount());
+                }
+                if (totalPledged.compareTo(estimation.getCost()) >= 0) {
+                    estimation.setPledged(true);
+                }
             }
         }
     }
